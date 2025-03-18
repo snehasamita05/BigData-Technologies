@@ -1,0 +1,65 @@
+spark-submit \
+--deploy-mode cluster \
+--master yarn \
+--num-executors 1 \
+--executor-cores 1 \
+--executor-memory 1G \
+--conf spark.dynamicAllocation.enabled=false \
+pythoncode1.py
+
+spark-submit \
+--master yarn \
+--num-executors 1 \
+--executor-cores 1 \
+--executor-memory 1G \
+--conf spark.dynamicAllocation.enabled=false \
+pythoncode1.py
+
+spark-submit \
+--deploy-mode cluster \
+--master yarn \
+--num-executors 3 \
+--executor-cores 4 \
+--executor-memory 2G \
+--conf spark.dynamicAllocation.enabled=false \
+--driver-memory 2G \
+--driver-cores 2 \
+--verbose \
+pythoncode1.py
+
+spark-submit \
+--master yarn \
+--num-executors 3 \
+--executor-memory 2G \
+--executor-cores 4 \
+--conf spark.dynamicAllocation.enabled=false \
+pythoncode2.py
+
+spark-submit \
+--master yarn \
+--num-executors 3 \
+--executor-memory 2G \
+--executor-cores 1 \
+--conf spark.dynamicAllocation.enabled=false \
+pythoncode2.py
+
+
+spark-submit \
+--master yarn \
+--num-executors 2 \
+--executor-cores 2 \
+--executor-memory 4G \
+--conf spark.dynamicAllocation.enabled=false \
+week9_question4.py
+
+spark-submit \
+--deploy-mode cluster \
+--master yarn \
+--num-executors 4 \
+--executor-cores 1 \
+--executor-memory 2G \
+--driver-memory 2G \
+--driver-cores 1 \
+--conf spark.dynamicAllocation.enabled=false \
+--verbose \
+week9_question5.py
